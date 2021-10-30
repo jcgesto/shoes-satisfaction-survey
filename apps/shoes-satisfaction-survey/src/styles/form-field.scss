@@ -1,0 +1,28 @@
+.form-field {
+    margin: 15px 0;
+
+    &--separator {
+        margin-top: 30px;
+    }
+
+    &__label {
+        color: $black;
+        display: block;
+        width: 100%;
+        font-family: Helvetica !important;
+        font-size: 14px;
+        line-height: normal;
+        margin-bottom: 5px;
+    }
+
+    &__error {
+        color: $error;
+        display: block;
+        font-size: 12px;
+        padding: 12px 0 8px;
+
+        &--radio-group {
+            padding-top: 8px;
+        }
+    }
+}

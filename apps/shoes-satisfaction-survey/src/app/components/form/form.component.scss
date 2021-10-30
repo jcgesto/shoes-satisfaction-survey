@@ -1,0 +1,41 @@
+@import '../../../styles/colors.scss';
+
+.text-input {
+    background-color: $white;
+    border: 1px solid $grey;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: $darker-grey;
+    font: 14px Helvetica;
+    line-height: normal;
+    line-height: 17px;
+    width: 100%;
+    outline: none;
+
+    &::placeholder {
+        color: $darker-grey;
+    }
+
+    &.invalid {
+        border-color: $error;
+    }
+}
+
+input[type="text"] {
+    height: 40px;
+    padding: 0 16px;
+}
+
+textarea {
+    resize: none;
+    outline: none;
+    height: 80px;
+    padding: 10px 16px;
+}
+
+.error {
+    color: $error;
+    display: block;
+    font-size: 12px;
+    padding: 12px 0 8px;
+}

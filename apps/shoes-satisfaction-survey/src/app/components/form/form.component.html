@@ -1,0 +1,52 @@
+<myorg-header title="We would like to hear your opinion" description="You recently bought through our online store, and we would like to know how everything went. As a reward for your opinion we will send you a discount code for your next purchase."></myorg-header>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="form-field">
+        <label class="form-field__label" for="name">Name*</label>
+        <input id="name" class="text-input" type="text" formControlName="name" placeholder="Name"
+            [ngClass]="{'invalid': name?.invalid && (name?.dirty || name?.touched || showErrors)}">
+        <div class="form-field__error" *ngIf="name?.invalid && (name?.dirty || name?.touched || showErrors)">Type a name</div>
+    </div>
+    <div class="form-field">
+        <label class="form-field__label" for="lastname">Last name*</label>
+        <input id="lastname" class="text-input" type="text" formControlName="lastname" placeholder="Last name"
+            [ngClass]="{'invalid': lastname?.invalid && (lastname?.dirty || lastname?.touched || showErrors)}">
+        <div class="form-field__error" *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched || showErrors)">Type a last
+            name</div>
+    </div>
+    <div class="form-field">
+        <label class="form-field__label" for="email">Email*</label>
+        <input id="email" class="text-input" type="text" formControlName="email" placeholder="Email"
+            [ngClass]="{'invalid': email?.invalid && (email?.dirty || email?.touched || showErrors)}">
+        <div class="form-field__error" *ngIf="email?.invalid && (email?.dirty || email?.touched || showErrors)">Type a valid email
+        </div>
+    </div>
+    <div class="form-field form-field--separator">
+        <label class="form-field__label">How was the proccess through our online store?*</label>
+        <div class="radio-group">
+            <label class="radio-group__element" for="satisfaction-poor">
+                <input id="satisfaction-poor" type="radio" value="1" formControlName="satisfaction">Poor
+            </label>
+            <label class="radio-group__element" for="satisfaction-bad">
+                <input id="satisfaction-bad" type="radio" value="2" formControlName="satisfaction">Bad
+            </label>
+            <label class="radio-group__element" for="satisfaction-good">
+                <input id="satisfaction-good" type="radio" value="3" formControlName="satisfaction">Good
+            </label>
+            <label class="radio-group__element" for="satisfaction-great">
+                <input id="satisfaction-great" type="radio" value="4" formControlName="satisfaction">Great
+            </label>
+            <label class="radio-group__element" for="satisfaction-excellent">
+                <input id="satisfaction-excellent" type="radio" value="5" formControlName="satisfaction">Excellent
+            </label>
+        </div>
+        <div class="form-field__error form-field__error--radio-group"
+            *ngIf="satisfaction?.invalid && (satisfaction?.dirty || satisfaction?.touched || showErrors)">Make a
+            selection</div>
+    </div>
+    <div class="form-field form-field--separator">
+        <label class="form-field__label" for="notes">How could we improve?</label>
+        <textarea id="notes" class="text-input" type="text"></textarea>
+    </div>
+    <button type="submit">{{ processing ? 'Processing' : 'Send' }}</button>
+</form>

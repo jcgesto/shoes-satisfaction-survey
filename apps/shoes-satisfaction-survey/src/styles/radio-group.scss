@@ -1,0 +1,12 @@
+.radio-group {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    &__element {
+        color: $darker-grey;
+        font-size: 14px;
+    }
+}
