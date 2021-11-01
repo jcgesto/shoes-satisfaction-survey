@@ -1,4 +1,3 @@
-import { componentFactoryName } from "@angular/compiler";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { FormComponent } from "./components/form/form.component";

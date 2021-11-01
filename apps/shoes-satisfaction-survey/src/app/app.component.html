@@ -1,2 +1,6 @@
-<div>Message: {{ hello$ | async | json }}</div>
-<router-outlet></router-outlet>
+<div class="app">
+  <div class="app__content">
+    <router-outlet></router-outlet>
+  </div>
+  <myorg-error-modal></myorg-error-modal>
+</div>

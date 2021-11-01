@@ -1,0 +1,7 @@
+<div class="error-modal" [ngClass]="{'error-modal--hidden': !show}">
+  <div class="error-modal__content-container">
+    <h1 class="error-modal__title">{{title}}</h1>
+    <p class="error-modal__description">{{description}}</p>
+    <button (click)="onButtonClick()">Skip</button>
+  </div>
+</div>

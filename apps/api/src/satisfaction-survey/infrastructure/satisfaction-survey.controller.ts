@@ -1,19 +1,20 @@
+import { satisfactionSurvey } from '@myorg/api-interfaces';
 import { Body, Controller, Get, Post } from '@nestjs/common';
-
 import { SatisfactionSurveyService } from '../application/satisfaction-survey.service';
+import { CreateSatisfactionSurveyDto } from '../domain/create-satisfaction-survey.dto';
+import { SatisfactionSurveyEntity } from '../domain/satisfaction-survey.entity';
 
-
-@Controller()
+@Controller(satisfactionSurvey)
 export class SatisfactionSurveyController {
   constructor(private readonly satisfactionSurveyService: SatisfactionSurveyService) {}
 
   @Get('')
-  getAll(): Promise<SatisfactionSurveyDto []> {
+  getAll(): Promise<any []> {
     return this.satisfactionSurveyService.getAll()
   }
 
   @Post('')
-  create(@Body() createSatisfactionSurveyRequestDto: CreateSatisfactionSurveyRequestDto): Promise<SatisfactionSurveyDto> {
-    return this.satisfactionSurveyService.create()
+  create(@Body() createSatisfactionSurveyDto: CreateSatisfactionSurveyDto): Promise<SatisfactionSurveyEntity> {
+    return this.satisfactionSurveyService.create(createSatisfactionSurveyDto)
   }
 }

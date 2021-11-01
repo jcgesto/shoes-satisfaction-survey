@@ -1,34 +1,21 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
-import { timer } from "rxjs";
-import { map } from "rxjs/operators";
-import { SatisfactionSurvey } from "../../models/satisfaction-survey.model";
-import { success } from "../../routes";
+import { ICreateSatisfactionSurveyDto, satisfactionSurvey } from "@myorg/api-interfaces";
+import { environment } from "apps/shoes-satisfaction-survey/src/environments/environment";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class FormService {
 
-    constructor (
-        private readonly http: HttpClient,
-        private readonly router: Router
-    ) {}
+  url = `${environment.apiBaseUrl}/${satisfactionSurvey}`
 
-    post (satisfactionSurvey: SatisfactionSurvey) {
-        // this.http.post('url', satisfactionSurvey)
-        timer(5000).pipe(map((_) => ({})))
-        .toPromise()
-            .then(this.handleSuccess.bind(this))
-            .catch(this.handleError.bind(this))
-    }
+  constructor(
+    private readonly http: HttpClient
+  ) { }
 
-    private handleSuccess () {
-        this.router.navigate([`/${success}`])
-    }
-
-    private handleError (error: any) {
-        console.log('ERROR', error)
-    }
+  post(createSatisfactionSurvey: ICreateSatisfactionSurveyDto) {
+    return this.http.post(this.url, createSatisfactionSurvey)
+      .toPromise()
+  }
 }
