@@ -24,29 +24,29 @@
     <div class="form-field form-field--separator">
         <label class="form-field__label">How was the proccess through our online store?*</label>
         <div class="radio-group">
-            <label class="radio-group__element" for="satisfaction-poor">
-                <input id="satisfaction-poor" type="radio" value="1" formControlName="satisfaction">Poor
+            <label class="radio-group__element" for="score-poor">
+                <input id="score-poor" type="radio" value="1" formControlName="score">Poor
             </label>
-            <label class="radio-group__element" for="satisfaction-bad">
-                <input id="satisfaction-bad" type="radio" value="2" formControlName="satisfaction">Bad
+            <label class="radio-group__element" for="score-bad">
+                <input id="score-bad" type="radio" value="2" formControlName="score">Bad
             </label>
-            <label class="radio-group__element" for="satisfaction-good">
-                <input id="satisfaction-good" type="radio" value="3" formControlName="satisfaction">Good
+            <label class="radio-group__element" for="score-good">
+                <input id="score-good" type="radio" value="3" formControlName="score">Good
             </label>
-            <label class="radio-group__element" for="satisfaction-great">
-                <input id="satisfaction-great" type="radio" value="4" formControlName="satisfaction">Great
+            <label class="radio-group__element" for="score-great">
+                <input id="score-great" type="radio" value="4" formControlName="score">Great
             </label>
-            <label class="radio-group__element" for="satisfaction-excellent">
-                <input id="satisfaction-excellent" type="radio" value="5" formControlName="satisfaction">Excellent
+            <label class="radio-group__element" for="score-excellent">
+                <input id="score-excellent" type="radio" value="5" formControlName="score">Excellent
             </label>
         </div>
         <div class="form-field__error form-field__error--radio-group"
-            *ngIf="satisfaction?.invalid && (satisfaction?.dirty || satisfaction?.touched || showErrors)">Make a
+            *ngIf="score?.invalid && (score?.dirty || score?.touched || showErrors)">Make a
             selection</div>
     </div>
     <div class="form-field form-field--separator">
         <label class="form-field__label" for="notes">How could we improve?</label>
         <textarea id="notes" class="text-input" type="text"></textarea>
     </div>
-    <button type="submit">{{ processing ? 'Processing' : 'Send' }}</button>
+    <button class="" type="submit">{{ processing ? 'Processing' : 'Send' }}</button>
 </form>
