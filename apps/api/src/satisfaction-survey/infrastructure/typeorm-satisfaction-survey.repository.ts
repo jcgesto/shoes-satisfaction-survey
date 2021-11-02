@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
-import { CreateSatisfactionSurveyDto } from "../domain/create-satisfaction-survey.dto";
+import { CreateSatisfactionSurveyDto } from "./create-satisfaction-survey.dto";
 import { SatisfactionSurveyEntity } from "../domain/satisfaction-survey.entity";
 import { ISatisfactionSurveyRepository } from "../domain/satisfaction-survey.repository";
 

@@ -1,15 +1,18 @@
-// :host {
-//   display: block;
-//   min-width: 300px;
-//   max-width: 600px;
-//   margin: 50px auto;
-// }
-
 .app {
+  padding: 0 50px;
+
   &__content {
     display: block;
     min-width: 300px;
     max-width: 600px;
     margin: 50px auto;
+  }
+
+  &__banner {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
   }
 }

@@ -9,6 +9,7 @@ import { FormComponent } from './components/form/form.component';
 import { SuccessComponent } from './components/success/success.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ErrorModalComponent } from './components/error-modal/error-modal.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ErrorModalComponent } from './components/error-modal/error-modal.compon
     FormComponent,
     SuccessComponent,
     HeaderComponent,
-    ErrorModalComponent
+    ErrorModalComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,

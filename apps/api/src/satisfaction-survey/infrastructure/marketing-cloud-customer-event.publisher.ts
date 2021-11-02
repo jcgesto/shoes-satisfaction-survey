@@ -1,25 +1,28 @@
 import { HttpService, Injectable } from "@nestjs/common";
 import { environment } from "../../environments/environment";
 import { MarketingCloudAuthenticationService } from "./marketing-cloud-authentication.service";
+import { CustomerEvent } from "../domain/customer-event";
+import { ICustomerEventPublisher } from "../domain/customer-event.publisher";
 
 @Injectable()
-export class MarketingCloudEventClientService {
+export class MarketingCloudCustomerEventPublisher implements ICustomerEventPublisher {
 
   private url = `${environment.marketingCloudRestApiBaseUri}/interaction/v1/events`
 
   constructor(
     private readonly httpService: HttpService,
-    private readonly salesforceAuthenticationService: MarketingCloudAuthenticationService) {}
+    private readonly marketingCloudAuthenticationService: MarketingCloudAuthenticationService) {}
 
-  async post(email: string, discountCode: string): Promise<void> {
-    const token = await this.salesforceAuthenticationService.getToken()
-    const body = this.getBody(email, discountCode) 
+  async publish(customerEvent: CustomerEvent): Promise<any> {
+    const token = await this.marketingCloudAuthenticationService.getToken()
+    const body = this.getBody(customerEvent.email, customerEvent.discountCode) 
     try {
       console.log(`Posting event to Marketing Cloud`, body, token)
       const result = await this.httpService.post(this.url, body, {
         headers: this.getHeaders(token)
       }).toPromise()
       console.log('Post success', result.data)
+      return result.data
     } catch (error) {
       console.log('Post Error', error)
     }

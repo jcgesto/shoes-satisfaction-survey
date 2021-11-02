@@ -1,4 +1,4 @@
-import { CreateSatisfactionSurveyDto } from "./create-satisfaction-survey.dto";
+import { CreateSatisfactionSurveyDto } from "../infrastructure/create-satisfaction-survey.dto";
 import { SatisfactionSurveyEntity } from "./satisfaction-survey.entity";
 
 export interface ISatisfactionSurveyRepository {

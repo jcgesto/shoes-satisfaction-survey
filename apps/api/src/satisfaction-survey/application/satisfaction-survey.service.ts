@@ -1,8 +1,9 @@
 import { ConflictException, Inject, Injectable, InternalServerErrorException } from "@nestjs/common";
-import { CreateSatisfactionSurveyDto } from "../domain/create-satisfaction-survey.dto";
+import { CreateSatisfactionSurveyDto } from "../infrastructure/create-satisfaction-survey.dto";
+import { CustomerEvent } from "../domain/customer-event";
+import { ICustomerEventPublisher } from "../domain/customer-event.publisher";
 import { SatisfactionSurveyEntity } from "../domain/satisfaction-survey.entity";
 import { ISatisfactionSurveyRepository } from "../domain/satisfaction-survey.repository";
-import { MarketingCloudEventClientService } from "./marketing-cloud-event-client.service";
 
 const errorTriggeringName = 'Luis'
 
@@ -11,7 +12,7 @@ export class SatisfactionSurveyService {
 
   constructor(
     @Inject('ISatisfactionSurveyRepository') private readonly satisfactionSurveyRepository: ISatisfactionSurveyRepository,
-    private readonly marketingCloudEventClientService: MarketingCloudEventClientService
+    @Inject('ICustomerEventPublisher') private readonly customerEventPublisher: ICustomerEventPublisher
   ) { }
 
   getAll(): Promise<any[]> {
@@ -27,7 +28,11 @@ export class SatisfactionSurveyService {
       throw new InternalServerErrorException()
     }
     const satisfactionSurvey = await this.satisfactionSurveyRepository.create(createSatisfactionSurveyDto)
-    this.marketingCloudEventClientService.post(satisfactionSurvey.email, satisfactionSurvey.discountCode)
+    const customerEvent: CustomerEvent = {
+      email: satisfactionSurvey.email,
+      discountCode: satisfactionSurvey.discountCode
+    }
+    await this.customerEventPublisher.publish(customerEvent)
     return satisfactionSurvey
   }
 }

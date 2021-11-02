@@ -31,10 +31,6 @@ Run `ng g @nrwl/angular:lib my-lib` to generate a library.
 
 Libraries are shareable across libraries and applications. They can be imported from `@myorg/mylib`.
 
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
 ## Build
 
 Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
@@ -50,10 +46,6 @@ Run `nx affected:test` to execute the unit tests affected by a change.
 Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
 
 Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Dependency graph
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
 ## Further help
 

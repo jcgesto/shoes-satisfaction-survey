@@ -1,9 +1,9 @@
 import { HttpModule, Module } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { MarketingCloudAuthenticationService as MarketingCloudAuthenticationService } from './application/marketing-cloud-authentication.service'
-import { MarketingCloudEventClientService } from './application/marketing-cloud-event-client.service'
+import { MarketingCloudAuthenticationService as MarketingCloudAuthenticationService } from './infrastructure/marketing-cloud-authentication.service'
 import { SatisfactionSurveyService } from './application/satisfaction-survey.service'
 import { SatisfactionSurveyEntity } from './domain/satisfaction-survey.entity'
+import { MarketingCloudCustomerEventPublisher } from './infrastructure/marketing-cloud-customer-event.publisher'
 import { SatisfactionSurveyController } from './infrastructure/satisfaction-survey.controller'
 import { TypeOrmSatisfactionSurveyRepository } from './infrastructure/typeorm-satisfaction-survey.repository'
 
@@ -23,7 +23,10 @@ import { TypeOrmSatisfactionSurveyRepository } from './infrastructure/typeorm-sa
       provide: 'ISatisfactionSurveyRepository',
       useClass: TypeOrmSatisfactionSurveyRepository
     },
-    MarketingCloudEventClientService,
+    {
+      provide: 'ICustomerEventPublisher',
+      useClass: MarketingCloudCustomerEventPublisher
+    },
     MarketingCloudAuthenticationService
   ]
 })

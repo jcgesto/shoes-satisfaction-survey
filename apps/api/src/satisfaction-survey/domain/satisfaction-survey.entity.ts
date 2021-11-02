@@ -2,29 +2,30 @@ import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity('satisfactionSurvey')
 export class SatisfactionSurveyEntity {
-    @PrimaryGeneratedColumn()
-    id: number
-    
-    @Column()
-    discountCode: string
-    
-    @Column()
-    name: string
+  
+  @PrimaryGeneratedColumn()
+  id: number
 
-    @Column()
-    lastname: string
+  @Column()
+  discountCode: string
 
-    @Column()
-    email: string
+  @Column()
+  name: string
 
-    @Column({ nullable: true })
-    notes?: string
+  @Column()
+  lastname: string
 
-    @Column()
-    score: number
+  @Column()
+  email: string
 
-    @BeforeInsert()
-    generateDiscountCode() {
-      this.discountCode = (Date.now() + Math.random()).toString()
-    }
+  @Column({ nullable: true })
+  notes?: string
+
+  @Column()
+  score: number
+
+  @BeforeInsert()
+  generateDiscountCode() {
+    this.discountCode = (Date.now() + Math.random()).toString()
+  }
 }

@@ -1,0 +1,42 @@
+@import '../../../styles/colors.scss';
+
+.banner {
+  background-color: #F0F0DB;
+  position: relative;
+
+  &__image {
+    background-color: #F0F0DB;
+    max-height: 435px;
+    margin: 0 auto;
+    max-width: 100%;
+    display: block;
+  }
+  &__text {
+    font-family: "Nike Futura","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    
+    right: 8%;
+    max-width: 385px;
+    font-size: 40px;
+
+    @media (min-width: 768px) {
+      right: 8%;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 60px;
+      max-width: 535px;
+      right: 8%;
+    }
+
+    @media (min-width: 1920px) {
+      right: 20%;
+    }
+  }
+}

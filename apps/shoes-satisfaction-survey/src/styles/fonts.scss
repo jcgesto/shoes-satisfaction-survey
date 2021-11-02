@@ -1,4 +1,16 @@
 @font-face {
-    font-family: NikeFont;
-    src: url("/assets/TradeGothicForNike365.ttf");
+  font-family: NikeFont;
+  src: url("/assets/TradeGothicForNike365.ttf");
+}
+
+@font-face {
+  font-family: "Nike Futura";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/nike-futura-extra-bold-v200.eot"),
+       url("/assets/nike-futura-extra-bold-v200.eot?#iefix") format("embedded-opentype"),
+       url("/assets/nike-futura-extra-bold-v200.woff2") format("woff2"),
+       url("/assets/nike-futura-extra-bold-v200.woff") format("woff"),
+       url("/assets/nike-futura-extra-bold-v200.ttf") format("truetype"),
+       url("/assets/nike-futura-extra-bold-v200.svg#nike-futura-extra-bold-v200") format("svg");
 }
