@@ -10,7 +10,9 @@
     "test": "nx test",
     "start:front": "nx serve shoes-satisfaction-survey",
     "start:back": "nx serve api",
-    "start:db": "docker-compose up -d"
+    "start:db": "docker-compose up -d",
+    "start:auth": "nx serve marketing-cloud-authentication-mock",
+    "start:marketing-cloud": "nx serve marketing-cloud-rest-mock"
   },
   "private": true,
   "dependencies": {

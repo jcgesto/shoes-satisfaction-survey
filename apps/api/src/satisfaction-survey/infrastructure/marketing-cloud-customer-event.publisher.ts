@@ -7,11 +7,12 @@ import { ICustomerEventPublisher } from "../domain/customer-event.publisher";
 @Injectable()
 export class MarketingCloudCustomerEventPublisher implements ICustomerEventPublisher {
 
-  private url = `${environment.marketingCloudRestApiBaseUri}/interaction/v1/events`
+  private url = `${environment.marketingCloudRestApiBaseUri}/events/events`
 
   constructor(
     private readonly httpService: HttpService,
-    private readonly marketingCloudAuthenticationService: MarketingCloudAuthenticationService) {}
+    private readonly marketingCloudAuthenticationService: MarketingCloudAuthenticationService
+  ) {}
 
   async publish(customerEvent: CustomerEvent): Promise<any> {
     const token = await this.marketingCloudAuthenticationService.getToken()
@@ -34,7 +35,7 @@ export class MarketingCloudCustomerEventPublisher implements ICustomerEventPubli
       EventDefinitionKey: environment.eventDefinitionKey,
       Data: {
         email,
-        'discount-code': discountCode,
+        discountCode
       }
     }
   }

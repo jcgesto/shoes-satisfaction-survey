@@ -68,6 +68,112 @@
       },
       "tags": []
     },
+    "marketing-cloud-authentication-mock": {
+      "root": "apps/marketing-cloud-authentication-mock",
+      "sourceRoot": "apps/marketing-cloud-authentication-mock/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/marketing-cloud-authentication-mock",
+            "main": "apps/marketing-cloud-authentication-mock/src/main.ts",
+            "tsConfig": "apps/marketing-cloud-authentication-mock/tsconfig.app.json",
+            "assets": ["apps/marketing-cloud-authentication-mock/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/marketing-cloud-authentication-mock/src/environments/environment.ts",
+                  "with": "apps/marketing-cloud-authentication-mock/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "marketing-cloud-authentication-mock:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": [
+              "apps/marketing-cloud-authentication-mock/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/marketing-cloud-authentication-mock"],
+          "options": {
+            "jestConfig": "apps/marketing-cloud-authentication-mock/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "marketing-cloud-rest-mock": {
+      "root": "apps/marketing-cloud-rest-mock",
+      "sourceRoot": "apps/marketing-cloud-rest-mock/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/marketing-cloud-rest-mock",
+            "main": "apps/marketing-cloud-rest-mock/src/main.ts",
+            "tsConfig": "apps/marketing-cloud-rest-mock/tsconfig.app.json",
+            "assets": ["apps/marketing-cloud-rest-mock/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/marketing-cloud-rest-mock/src/environments/environment.ts",
+                  "with": "apps/marketing-cloud-rest-mock/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "marketing-cloud-rest-mock:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/marketing-cloud-rest-mock/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/marketing-cloud-rest-mock"],
+          "options": {
+            "jestConfig": "apps/marketing-cloud-rest-mock/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
     "shoes-satisfaction-survey": {
       "projectType": "application",
       "root": "apps/shoes-satisfaction-survey",

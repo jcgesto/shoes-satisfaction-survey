@@ -31,7 +31,9 @@ export class MarketingCloudAuthenticationService {
       client_secret: environment.clientSecret
     }).toPromise()
     this.accessToken = response?.data['access_token']
+    console.log('token', response.data)
     const expiresIn = response?.data['expires_in']
+    console.log('expi', expiresIn)
     this.expiresAt = this.getExpirationDate(expiresIn)
   }
 
