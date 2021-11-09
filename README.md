@@ -1,12 +1,12 @@
 
 # SHOES SATISFACTION SURVEY
 
-Use case requested by Penfield Digital as part of the hiring proccess. The use case defines a e2e system consisting of a public website with a form where a customer will give feedback about last interactions with the client (in this case Nike), and as a reward for that information the customer will receive via email a discount code to use in future transactions.
+Use case requested while participating in a hiring proccess. The use case defines a e2e system consisting of a public website with a form where a customer will give feedback about last interactions with the seller, and as a reward for that information the customer will receive via email a discount code to use in future transactions.
 The system built consists of the following components:
 - Web form build using Angular
-- API build using NestJs. This API integrates with the database and with Penfield's marketing cloud on Salesforce
+- API build using NestJs. This API integrates with the database and with a external marketing cloud
 - Postgres database to store form data and discount codes
-- Marketing Cloud. Here is defined a Data Extension, a package to handle API authentication, and a Journey defined to send emails to customers
+- Mocked components of the marketing Cloud to use. those components are an authentication server, and an API tu push information and to send emails to clients
 
 
 ![image info](./diagram.png)
