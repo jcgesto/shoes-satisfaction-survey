@@ -22,7 +22,6 @@ export class SatisfactionSurveyService {
   async create(createSatisfactionSurveyDto: CreateSatisfactionSurveyDto): Promise<SatisfactionSurveyEntity> {
     const previousSatisfactionSurvey = await this.satisfactionSurveyRepository.getByEmail(createSatisfactionSurveyDto.email)
     if (previousSatisfactionSurvey) {
-      console.log('Email already submitted', previousSatisfactionSurvey)
       throw new ConflictException('Email already submitted')
     }
     if (createSatisfactionSurveyDto.name === errorTriggeringName) {
