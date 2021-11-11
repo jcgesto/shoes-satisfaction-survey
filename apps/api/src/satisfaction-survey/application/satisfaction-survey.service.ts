@@ -15,7 +15,7 @@ export class SatisfactionSurveyService {
     @Inject('ICustomerEventPublisher') private readonly customerEventPublisher: ICustomerEventPublisher
   ) { }
 
-  getAll(): Promise<any[]> {
+  getAll(): Promise<SatisfactionSurveyEntity[]> {
     return this.satisfactionSurveyRepository.getAll()
   }
 
