@@ -35,11 +35,11 @@ export class MarketingCloudAuthenticationService {
     this.expiresAt = this.getExpirationDate(expiresIn)
   }
 
-  getExpirationDate (expiresInSeconds: number): number {
+  private getExpirationDate (expiresInSeconds: number): number {
     return new Date(Date.now() + (expiresInSeconds * 1000)).getTime()
   }
 
-  isTokenExpired () {
+  private isTokenExpired () {
     return Date.now() >= this.expiresAt
   }
 }

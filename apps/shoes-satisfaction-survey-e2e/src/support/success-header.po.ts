@@ -1,0 +1,1 @@
+export const getSuccessHeader = () => cy.get('#success-header')

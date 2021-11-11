@@ -25,6 +25,7 @@ export class SatisfactionSurveyService {
       throw new ConflictException('Email already submitted')
     }
     if (createSatisfactionSurveyDto.name === errorTriggeringName) {
+      console.log('Error')
       throw new InternalServerErrorException()
     }
     const satisfactionSurvey = await this.satisfactionSurveyRepository.create(createSatisfactionSurveyDto)
