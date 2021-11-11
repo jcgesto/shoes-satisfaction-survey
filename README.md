@@ -20,6 +20,8 @@ To start the project locally you need to have installed [Docker](https://www.doc
   - `npm run start:db`
   - `npm run start:back`
   - `npm run start:front`
+  - `npm run start:auth`
+  - `npm run start:marketing-cloud`
 
 This will serve the web form in http://localhost:4200
 
