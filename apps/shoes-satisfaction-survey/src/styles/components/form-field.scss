@@ -6,19 +6,15 @@
     }
 
     &__label {
-        color: $black;
+        @include form-field-label-text();
         display: block;
         width: 100%;
-        font-family: Helvetica !important;
-        font-size: 14px;
-        line-height: normal;
         margin-bottom: 5px;
     }
 
     &__error {
-        color: $error;
+        @include form-field-error-text();
         display: block;
-        font-size: 12px;
         padding: 12px 0 8px;
 
         &--radio-group {

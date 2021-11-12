@@ -1,4 +1,5 @@
 @import '../../../styles/colors.scss';
+@import '../../../styles/typographies/text-definitions.scss';
 
 .error-modal {
   background: rgba($blackest,.6);
@@ -32,24 +33,14 @@
   }
 
   &__title {
-    color: $black;
-    font-family: "NikeFont";
-    font-size: 26px;
-    line-height: 26px;
-    font-weight: 700;
-    text-transform: uppercase;
-  
+    @include h1-title-text();  
     text-align: center;
   }
 
   &__description {
-    font-family: "HelveticaNeue", Helvetica !important;
-    line-height: 22px;
-    font-weight: 400;
+    @include body-text();
+    
     padding: 27px 0;
     text-align: center;
-    text-transform: none !important;
-    color: $darker-grey;
-    font-size: 14px;
   }
 }

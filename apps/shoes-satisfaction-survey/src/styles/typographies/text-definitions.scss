@@ -1,0 +1,101 @@
+$default-font-family: 'Helvetica';
+
+$h1-title-font-family: 'NikeFont';
+$h1-title-font-size: 26px;
+$h1-title-line-height: 26px;
+$h1-title-font-weight: 700;
+$h1-title-color: $black;
+$h1-title-text-transform: uppercase;
+
+$button-font-family: 'NikeFont';
+$button-font-size: 15px;
+$button-line-height: 17px;
+$button-text-transform: uppercase;
+
+$body-font-family: $default-font-family;
+$body-font-size: 14px;
+$body-line-height: 22px;
+$body-font-weight: 400;
+$body-color: $darker-grey;
+
+$text-input-font-family: $default-font-family;
+$text-input-font-size: 14px;
+$text-input-line-height: 17px;
+$text-input-font-weight: 400;
+$text-input-color: $darker-grey;
+
+$form-field-label-font-family: $default-font-family;
+$form-field-label-font-size: 14px;
+$form-field-label-line-height: normal;
+$form-field-label-font-weight: 400;
+$form-field-label-color: $black;
+
+$form-field-error-font-family: $default-font-family;
+$form-field-error-font-size: 12px;
+$form-field-error-line-height: 12px;
+$form-field-error-font-weight: 400;
+$form-field-error-color: $error;
+
+$banner-font-family: 'NikeFutura';
+$banner-font-size: 40px;
+$banner-line-height: 0.84;
+$banner-font-weight: 400;
+$banner-text-transform: uppercase;
+$banner-color: $blackest;
+
+@mixin h1-title-text() {
+  font-family: $h1-title-font-family;
+  font-size: $h1-title-font-size;
+  line-height: $h1-title-line-height;
+  font-weight: $h1-title-font-weight;
+  color: $h1-title-color;
+  text-transform: $h1-title-text-transform;
+}
+
+@mixin button-text() {
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  line-height: $button-line-height;
+  text-transform: $h1-title-text-transform;
+}
+
+@mixin body-text() {
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  line-height: $body-line-height;
+  font-weight: $body-font-weight;
+  color: $body-color;
+}
+
+@mixin text-input-text() {
+  font-family: $text-input-font-family;
+  font-size: $text-input-font-size;
+  line-height: $text-input-line-height;
+  font-weight: $text-input-font-weight;
+  color: $text-input-color;
+}
+
+@mixin form-field-label-text() {
+  font-family: $form-field-label-font-family;
+  font-size: $form-field-label-font-size;
+  font-weight: $form-field-label-font-weight;
+  line-height: $form-field-label-line-height;
+  color: $form-field-label-color;
+}
+
+@mixin form-field-error-text() {
+  font-family: $form-field-error-font-family;
+  font-size: $form-field-error-font-size;
+  font-weight: $form-field-error-font-weight;
+  line-height: $form-field-error-line-height;
+  color: $form-field-error-color;
+}
+
+@mixin banner-text() {
+  font-family: $banner-font-family;
+  font-size: $banner-font-size;
+  font-weight: $banner-font-weight;
+  line-height: $banner-line-height;
+  color: $banner-color;
+  text-transform: $banner-text-transform;
+}

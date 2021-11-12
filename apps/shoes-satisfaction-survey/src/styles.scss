@@ -1,6 +1,8 @@
 @import './styles/colors';
-@import './styles/fonts';
+@import './styles/typographies/font-faces';
+@import './styles/typographies/text-definitions';
 @import './styles/base';
-@import './styles/radio-group';
-@import './styles/button';
-@import './styles/form-field';
+@import './styles/components/radio-group';
+@import './styles/components/button';
+@import './styles/components/form-field';
+@import './styles/components/text-input';

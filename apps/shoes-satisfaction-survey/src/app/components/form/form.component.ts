@@ -7,8 +7,7 @@ import { FormService } from "./form.service";
 
 @Component({
   selector: 'myorg-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['form.component.scss']
+  templateUrl: './form.component.html'
 })
 export class FormComponent {
   form: FormGroup = this.formBuilder.group({

@@ -1,0 +1,17 @@
+.text-input {
+  @include text-input-text();
+  background-color: $white;
+  border: 1px solid $grey;
+  border-radius: 3px;
+  box-sizing: border-box;
+  width: 100%;
+  outline: none;
+
+  &::placeholder {
+      color: $darker-grey;
+  }
+
+  &.invalid {
+      border-color: $error;
+  }
+}
