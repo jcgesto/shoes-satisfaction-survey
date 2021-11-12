@@ -8,6 +8,8 @@ The system built consists of the following components:
 - Postgres database to store form data and discount codes
 - Mocked components of the marketing Cloud to use. those components are an authentication server, and an API tu push information and to send emails to clients
 
+**The application is not ready for production**, as it relies in development servers right know, and the project is not finished yet.
+
 
 ![image info](./diagram.png)
 
@@ -37,17 +39,17 @@ Libraries are shareable across libraries and applications. They can be imported 
 
 Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Unit tests
 
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
+Unit tests were written for the key components that needed to be comprehensively checked. The rest of the components of the project are covered by e2e test cases.
 
-Run `nx affected:test` to execute the unit tests affected by a change.
+Run `npm run test:api` to execute the unit tests via [Jest](https://jestjs.io).
 
-## Running end-to-end tests
+## End-to-end tests
 
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
+End-to-end tests were written to cover the general use cases of the whole system.
 
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
+Run `npm run test-e2e` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
 
 ## Further help
 

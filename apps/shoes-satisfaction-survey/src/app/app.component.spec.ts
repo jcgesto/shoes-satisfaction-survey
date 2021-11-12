@@ -1,13 +1,24 @@
-import { Component } from '@angular/core';
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { ErrorModalComponent } from './components/error-modal/error-modal.component';
+import { CommonModule } from '@angular/common';
+import { BannerComponent } from './components/banner/banner.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
-      imports: [HttpClientModule],
+      declarations: [
+        AppComponent,
+        ErrorModalComponent,
+        BannerComponent
+      ],
+      imports: [
+        HttpClientModule,
+        CommonModule,
+        RouterTestingModule
+      ],
     }).compileComponents();
   }));
 
