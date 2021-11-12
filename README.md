@@ -8,6 +8,8 @@ The system built consists of the following components:
 - Postgres database to store form data and discount codes
 - Mocked components of the marketing Cloud to use. those components are an authentication server, and an API tu push information and to send emails to clients
 
+The styling, typographies, assets, etc. were all extracted from the [Nike homepage](https://www.nike.com/)
+
 **The application is not ready for production**, as it relies in development servers right know, and the project is not finished yet. Improvements and new functionality will be added constantly.
 
 
