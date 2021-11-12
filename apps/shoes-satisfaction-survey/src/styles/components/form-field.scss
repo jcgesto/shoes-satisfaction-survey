@@ -1,24 +1,24 @@
 .form-field {
-    margin: 15px 0;
+  margin: 15px 0;
 
-    &--separator {
-        margin-top: 30px;
+  &--separator {
+    margin-top: 30px;
+  }
+
+  &__label {
+    @include form-field-label-text();
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  &__error {
+    @include form-field-error-text();
+    display: block;
+    padding: 12px 0 8px;
+
+    &--radio-group {
+      padding-top: 8px;
     }
-
-    &__label {
-        @include form-field-label-text();
-        display: block;
-        width: 100%;
-        margin-bottom: 5px;
-    }
-
-    &__error {
-        @include form-field-error-text();
-        display: block;
-        padding: 12px 0 8px;
-
-        &--radio-group {
-            padding-top: 8px;
-        }
-    }
+  }
 }
